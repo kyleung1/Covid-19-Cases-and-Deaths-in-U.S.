@@ -26,7 +26,7 @@ The Covid-19 pandemic was devastating across the United States in 2020. There we
 
 ## Functions
 
-The main function in the covid-19 rates choropleth map is hovering over a county. When the user hovers over a county, information about the county such as the name and the rate appears. The rate that is shown is calculated as covid-19 cases per 1000 people there were.
+The main function in the covid-19 rates choropleth map is hovering over a county. When the user hovers over a county, information about the county such as the name and the rate appears. The rate that is shown is calculated as covid-19 cases per 1000 people.
 
 The main function in the covid-19 cases proportional symbols map is clicking over a circle in the proportional symbol. Information such as the name of the state, name of the county, deaths and cases of covid-19 are displayed when a circle is clicked.
 
