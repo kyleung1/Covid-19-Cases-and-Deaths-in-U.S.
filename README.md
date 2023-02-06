@@ -14,10 +14,13 @@
 
 ## Screenshots
 
-![choropleth map]()
-![choropleth map function]()
-![proportional symbols map]()
-![proportional symbols map function]()
+![choropleth map](https://raw.githubusercontent.com/kyleung1/Covid-19-Cases-and-Deaths-in-US/main/img/choro2.PNG)
+| When hovering over a county
+![choropleth map function](https://raw.githubusercontent.com/kyleung1/Covid-19-Cases-and-Deaths-in-US/main/img/choro1.PNG)
+
+![proportional symbols map](https://raw.githubusercontent.com/kyleung1/Covid-19-Cases-and-Deaths-in-US/main/img/prop2.PNG)
+| When clicking on proportional symbol
+![proportional symbols map function](https://raw.githubusercontent.com/kyleung1/Covid-19-Cases-and-Deaths-in-US/main/img/prop1.PNG)
 
 ## Functions
 
