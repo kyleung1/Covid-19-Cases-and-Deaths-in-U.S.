@@ -8,11 +8,11 @@ The Covid-19 pandemic was devastating across the United States in 2020. There we
 
 ### Map 1: Choropleth map of covid-19 rates in the U.S. in 2020
 
-[Click here for map1](https://kyleung1.github.io/Covid-19-Cases-and-Deaths-in-US/map1.html)
+[Click here for map 1](https://kyleung1.github.io/Covid-19-Cases-and-Deaths-in-US/map1.html)
 
 ### Map 2: Proportional Symbols map of covid-19 cases in the U.s. in 2020
 
-[Click here for map1](https://kyleung1.github.io/Covid-19-Cases-and-Deaths-in-US/map2.html)
+[Click here for map 2](https://kyleung1.github.io/Covid-19-Cases-and-Deaths-in-US/map2.html)
 
 ## Screenshots
 
@@ -43,10 +43,10 @@ Some other resources I used were [mapshaper](https://mapshaper.org/) to convert 
 
 ## Credit
 
-Kyle Leung
-Bo Zhao
+Kyle Leung,
+Bo Zhao,
 Steven Bao
 
 ## Acknowledgement
 
-Thank you Professor Bo Zhao and Steven Bao for designing this lab and helping me with questions. Thank you for NYTimes, ACS, and U.S. Census bureau for providing open source data for me to use.
+Thank you Professor Bo Zhao and Steven Bao for designing this lab and helping me with questions. Thank you to NYTimes, ACS, and U.S. Census bureau for providing open source data for me to use.
