@@ -3,7 +3,7 @@ mapboxgl.accessToken =
 
 const map = new mapboxgl.Map({
 container: 'map', // container ID
-style: 'mapbox://styles/mapbox/light-v10', // style URL
+style: 'mapbox://styles/mapbox/dark-v11', // style URL
 zoom: 4, // starting zoom
 center: [-100, 40], // starting center
 projection: 'albers'
@@ -101,6 +101,10 @@ map.on('load', function loadingData() {
     item.appendChild(value);
     legend.appendChild(item);
     });
+
+    const source =
+    '<p style="text-align: right; font-size:10pt">Source: <a href="https://github.com/nytimes/covid-19-data/blob/43d32dde2f87bd4dafbb7d23f5d9e878124018b8/live/us-counties.csv">NYTimes</a>, <a href="https://data.census.gov/table?g=0100000US$050000&d=ACS+5-Year+Estimates+Data+Profiles&tid=ACSDP5Y2018.DP05&hidePreview=true">2018 ACS</a></p>';
+    legend.innerHTML += source;
 
     map.on('mousemove', ({ point }) => {
     const county = map.queryRenderedFeatures(point, {

@@ -2,15 +2,15 @@ mapboxgl.accessToken =
         "pk.eyJ1Ijoia3lsZXVuZzF1dyIsImEiOiJjbGFmcWs3bmgwaWt0M3VwYndydjU5Z3hyIn0.VB46m97-U_Aoz5My7xuMwg";
 let map = new mapboxgl.Map({
     container: "map", // container ID
-    style: "mapbox://styles/mapbox/streets-v11", // style URL
+    style: "mapbox://styles/mapbox/dark-v11", // style URL
     center: [-100, 40], // starting position [lng, lat]
     zoom: 4.3, // starting zoom
     projection: "albers"
 });
 
-const grades = [2000, 4000, 6000],
-    colors = ["rgb(208,209,230)", "rgb(103,169,207)", "rgb(1,108,89)"],
-    radii = [5, 15, 20];
+const grades = [1000, 5000, 10000, 15000, 20000],
+    colors = ["rgb(169, 204, 227)", "rgb(84, 153, 199)", "rgb(36, 113, 163 )", "rgb(26, 82, 118)", "rgb(20, 143, 119)"],
+    radii = [5, 10, 15, 20, 25];
 
 
 map.on("load", () => {
@@ -31,6 +31,8 @@ map.addLayer({
         [grades[0], radii[0]],
         [grades[1], radii[1]],
         [grades[2], radii[2]],
+        [grades[3], radii[3]],
+        [grades[4], radii[4]],
         ],
     },
     "circle-color": {
@@ -39,6 +41,8 @@ map.addLayer({
         [grades[0], colors[0]],
         [grades[1], colors[1]],
         [grades[2], colors[2]],
+        [grades[3], colors[3]],
+        [grades[4], colors[4]],
         ],
     },
     "circle-stroke-color": "white",
@@ -47,18 +51,21 @@ map.addLayer({
     },
 });
 
-// click on tree to view magnitude in a popup
+// click on tree to view cases in a popup
 map.on("click", "case-point", (event) => {
     new mapboxgl.Popup()
     .setLngLat(event.features[0].geometry.coordinates)
     .setHTML(
-        `<strong>Magnitude:</strong> ${event.features[0].properties.cases}`
+        `<strong>State:</strong> ${event.features[0].properties.state}<br>` +
+        `<strong>County:</strong> ${event.features[0].properties.county}<br>` +
+        `<strong>Deaths:</strong> ${event.features[0].properties.deaths}<br>` +
+        `<strong>Cases:</strong> ${event.features[0].properties.cases}<br>`
     )
     .addTo(map);
 });
 
 const source =
-    '<p style="text-align: right; font-size:10pt">Source: <a href="https://earthquake.usgs.gov/earthquakes/">USGS</a></p>';
+    '<p style="text-align: right; font-size:10pt">Source: <a href="https://github.com/nytimes/covid-19-data/blob/43d32dde2f87bd4dafbb7d23f5d9e878124018b8/live/us-counties.csv">NYTimes</a>, <a href="https://data.census.gov/table?g=0100000US$050000&d=ACS+5-Year+Estimates+Data+Profiles&tid=ACSDP5Y2018.DP05&hidePreview=true">2018 ACS</a></p>';
 
 // combine all the html codes.
 legend.innerHTML = labels.join("") + source;
@@ -68,7 +75,7 @@ legend.innerHTML = labels.join("") + source;
 const legend = document.getElementById("legend");
 
 //set up legend grades and labels
-var labels = ["<strong>Size</strong>"],
+var labels = ["<strong>Cases</strong>"],
 vbreak;
 //iterate through grades and create a scaled circle and label for each
 for (var i = 0; i < grades.length; i++) {
